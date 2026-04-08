@@ -25,8 +25,12 @@ export default function ProjectPreviewCarousel({ slides }) {
   const activeSlide = useMemo(() => slides[activeIndex], [activeIndex, slides]);
   const hasImagePreview = Boolean(activeSlide.imageSrc);
   const hasVideoPreview = Boolean(activeSlide.videoSrc);
+  const hasPdfPreview = Boolean(activeSlide.pdfSrc);
   const mediaOnlyCarousel = slides.every(
-    (slide) => Boolean(slide.imageSrc) || Boolean(slide.videoSrc),
+    (slide) =>
+      Boolean(slide.imageSrc) ||
+      Boolean(slide.videoSrc) ||
+      Boolean(slide.pdfSrc),
   );
   const hasRows =
     Array.isArray(activeSlide.rows) && activeSlide.rows.length > 0;
@@ -49,12 +53,12 @@ export default function ProjectPreviewCarousel({ slides }) {
     <div className="space-y-3">
       {mediaOnlyCarousel ? (
         <div className="space-y-3">
-          <div className="relative overflow-hidden border border-outline bg-surface">
+          <div className="relative mx-auto w-full max-w-[1120px] overflow-hidden border border-outline bg-surface">
             <button
               type="button"
               onClick={goPrevious}
               className="absolute left-3 top-1/2 z-10 -translate-y-1/2 border border-outline bg-surface/90 px-3 py-2 font-mono text-xs uppercase tracking-[0.18em] text-primary transition-colors duration-150 hover:border-primary hover:text-accent"
-              aria-label="Previous image"
+              aria-label="Previous media"
             >
               {"<"}
             </button>
@@ -63,15 +67,15 @@ export default function ProjectPreviewCarousel({ slides }) {
               type="button"
               onClick={goNext}
               className="absolute right-3 top-1/2 z-10 -translate-y-1/2 border border-outline bg-surface/90 px-3 py-2 font-mono text-xs uppercase tracking-[0.18em] text-primary transition-colors duration-150 hover:border-primary hover:text-accent"
-              aria-label="Next image"
+              aria-label="Next media"
             >
               {">"}
             </button>
 
-            <div className="min-h-[300px] sm:min-h-[360px] md:min-h-[430px]">
+            <div className="aspect-[16/9] w-full bg-subtle">
               {hasVideoPreview ? (
                 <video
-                  className="block h-full w-full bg-subtle object-contain object-top"
+                  className="block h-full w-full object-contain object-top"
                   controls
                   playsInline
                   muted
@@ -83,11 +87,17 @@ export default function ProjectPreviewCarousel({ slides }) {
                     type={activeSlide.videoType ?? "video/mp4"}
                   />
                 </video>
+              ) : hasPdfPreview ? (
+                <iframe
+                  src={activeSlide.pdfSrc}
+                  title={activeSlide.pdfTitle ?? activeSlide.headline}
+                  className="block h-full w-full"
+                />
               ) : (
                 <img
                   src={activeSlide.imageSrc}
                   alt={activeSlide.imageAlt ?? activeSlide.headline}
-                  className="block h-full w-full bg-subtle object-contain object-top"
+                  className="block h-full w-full object-contain object-top"
                 />
               )}
             </div>

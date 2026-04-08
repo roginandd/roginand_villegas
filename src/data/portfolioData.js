@@ -25,6 +25,15 @@ import vistaPerspectiveImage from "../assets/projects/vista/perspective.png";
 import vistaProductDetailImage from "../assets/projects/vista/product_detail.png";
 import vistaPropertyImage from "../assets/projects/vista/property.png";
 import vistaDemoVideo from "../assets/projects/vista/demo.mp4";
+import safepassAdminAnalyticsImage from "../assets/projects/safepass/admin_analytics.jpg";
+import safepassLandingPageImage from "../assets/projects/safepass/landing_page.jpg";
+import safepassStakeholderApproverImage from "../assets/projects/safepass/stakeholder_apporver.jpg";
+import safepassStakeholderRegistrImage from "../assets/projects/safepass/stakeholder_registr.jpg";
+import safepassStakeholderRegistrationImage from "../assets/projects/safepass/stakeholder_registration.jpg";
+import safepassVerifierDashboardImage from "../assets/projects/safepass/verifier_dashboard.jpg";
+import safepassVerifierEntrylogsImage from "../assets/projects/safepass/verifier_entrylogs.jpg";
+import safepassVisitorRegistrationImage from "../assets/projects/safepass/visitor_registration.jpg";
+import fairgroupAssignmentPaperPdf from "../assets/projects/fairgroup/Final FairGroupAssignment.pdf";
 
 export const navigationItems = [
   { id: "source", label: "source" },
@@ -47,11 +56,11 @@ export const profile = {
 };
 
 export const about = {
-  lines: [
-    "Builds backend systems around real workflows, clean service boundaries, and maintainable APIs.",
-    "Currently pursuing BS Computer Science at the University of Cebu with a focus on Java ecosystems, cloud-backed systems, and practical delivery.",
-    "Prefers backend work that turns operational rules into readable endpoints, stable data models, and production-ready implementations.",
-  ],
+ lines: [
+  "Builds backend systems centered on REST APIs, real-world workflows, and clean service boundaries.",
+  "Focuses on performance, SOLID-based architecture, and maintainable code for scalable systems.",
+  "3rd-year Computer Science student at the University of Cebu, delivering production-ready backend systems with clear data models and reliable APIs.",
+],
   tags: [
     { name: "@education", value: "BS Computer Science, University of Cebu" },
     { name: "@location", value: "Cebu, Philippines" },
@@ -349,7 +358,7 @@ export const projects = [
     highlights: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
     stack: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
     gallery: [
-          {
+      {
         fileLabel: "// finalist_notice.jpg",
         imageSrc: vistaFinalistNoticeImage,
         imageAlt: "Vista finalist notice",
@@ -384,7 +393,7 @@ export const projects = [
         imageSrc: vistaBudgetImage,
         imageAlt: "Vista budget page",
       },
-  
+
       {
         fileLabel: "// demo.mp4",
         videoSrc: vistaDemoVideo,
@@ -437,46 +446,44 @@ export const projects = [
     ],
     gallery: [
       {
-        fileLabel: "// stakeholder-accreditation",
-        windowTitle: "StakeholderReviewQueue",
-        annotation: '@PreviewState("approvals")',
-        headline: "Accreditation approval queue",
-        description:
-          "Centralizes document review, remarks, and decision history before QR issuance.",
-        rows: [
-          "document verification workflow",
-          "reviewer role access checks",
-          "approval history persistence",
-        ],
-        metrics: ["pending:24", "approved:108", "remarks:required"],
+        fileLabel: "// landing_page.jpg",
+        imageSrc: safepassLandingPageImage,
+        imageAlt: "SafePass landing page",
       },
       {
-        fileLabel: "// qr-access-verification",
-        windowTitle: "QrVerificationPanel",
-        annotation: '@PreviewState("access")',
-        headline: "QR-based entry validation",
-        description:
-          "Verifies access credentials at the gate and links sessions to physical pass handling.",
-        rows: [
-          "qr status check",
-          "pass inventory assignment",
-          "session activation logic",
-        ],
-        metrics: ["gate:active", "passes:39", "session-state:tracked"],
+        fileLabel: "// stakeholder_apporver.jpg",
+        imageSrc: safepassStakeholderApproverImage,
+        imageAlt: "SafePass stakeholder approver view",
       },
       {
-        fileLabel: "// entry-log-report",
-        windowTitle: "EntryAuditConsole",
-        annotation: '@PreviewState("logging")',
-        headline: "Movement and reporting log",
-        description:
-          "Records facility movement for visitors and stakeholders with audit-ready history.",
-        rows: [
-          "entry / exit timestamps",
-          "stakeholder and visitor branching",
-          "report-ready event log records",
-        ],
-        metrics: ["logs:842", "reports:daily", "audit:enabled"],
+        fileLabel: "// stakeholder_registr.jpg",
+        imageSrc: safepassStakeholderRegistrImage,
+        imageAlt: "SafePass stakeholder registration draft view",
+      },
+      {
+        fileLabel: "// stakeholder_registration.jpg",
+        imageSrc: safepassStakeholderRegistrationImage,
+        imageAlt: "SafePass stakeholder registration view",
+      },
+      {
+        fileLabel: "// visitor_registration.jpg",
+        imageSrc: safepassVisitorRegistrationImage,
+        imageAlt: "SafePass visitor registration view",
+      },
+      {
+        fileLabel: "// verifier_dashboard.jpg",
+        imageSrc: safepassVerifierDashboardImage,
+        imageAlt: "SafePass verifier dashboard",
+      },
+      {
+        fileLabel: "// verifier_entrylogs.jpg",
+        imageSrc: safepassVerifierEntrylogsImage,
+        imageAlt: "SafePass verifier entry logs",
+      },
+      {
+        fileLabel: "// admin_analytics.jpg",
+        imageSrc: safepassAdminAnalyticsImage,
+        imageAlt: "SafePass admin analytics view",
       },
     ],
     sourceUrl: "https://github.com/roginandd/safepass_api",
@@ -509,46 +516,9 @@ export const projects = [
     stack: ["Spring Boot", "React", "Hybrid algorithm design"],
     gallery: [
       {
-        fileLabel: "// csv-upload-intake",
-        windowTitle: "StudentImportConsole",
-        annotation: '@PreviewState("input")',
-        headline: "CSV intake and preprocessing",
-        description:
-          "Loads student records and normalizes grade inputs before running the grouping algorithm.",
-        rows: [
-          "csv parsing and validation",
-          "grade sorting preparation",
-          "group count constraint checks",
-        ],
-        metrics: ["csv:loaded", "records:48", "validation:pass"],
-      },
-      {
-        fileLabel: "// balanced-group-output",
-        windowTitle: "GroupResultPreview",
-        annotation: '@PreviewState("output")',
-        headline: "Balanced team output",
-        description:
-          "Displays generated groups with comparable grade distribution across teams.",
-        rows: [
-          "round-robin distribution",
-          "group size consistency checks",
-          "balanced output rendering",
-        ],
-        metrics: ["groups:6", "variance:low", "fairness:improved"],
-      },
-      {
-        fileLabel: "// hybrid-algorithm-pass",
-        windowTitle: "HybridBalancerTrace",
-        annotation: '@PreviewState("algorithm")',
-        headline: "Hybrid balancing pass",
-        description:
-          "Refines groups using greedy and divide-and-conquer logic after the initial distribution phase.",
-        rows: [
-          "greedy partition refinement",
-          "divide-and-conquer rebalance step",
-          "performance-aware assignment logic",
-        ],
-        metrics: ["algo:hybrid", "phase:multi-step", "scalability:reasonable"],
+        fileLabel: "// final_fairgroup_assignment.pdf",
+        pdfSrc: fairgroupAssignmentPaperPdf,
+        pdfTitle: "Fair Group Assignment Paper",
       },
     ],
     sourceUrl: "https://github.com/roginandd/FairGroupAssignment",
