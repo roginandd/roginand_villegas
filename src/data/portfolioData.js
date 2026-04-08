@@ -11,7 +11,7 @@ export const profile = {
   name: "Roginand Villegas",
   className: "RoginandVillegas",
   requestMapping: "/roginand",
-  role: "Backend Engineer",
+  role: "Backend Engineer (3rd Year CS Student)",
   school: "University of Cebu",
   location: "Cebu, Philippines",
   statusMessage: "open-to-internship-and-entry-level-roles",

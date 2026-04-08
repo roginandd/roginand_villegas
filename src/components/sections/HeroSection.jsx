@@ -53,8 +53,8 @@ export default function HeroSection() {
         
           
             
-          <figure className="space-y-3 md:col-start-2 md:row-start-1 md:row-span-2 md:self-start">
-            <CodeLine className="text-xs text-muted">// me.jpg</CodeLine>
+          <figure className="space-y-10 md:col-start-2 md:row-start-1 md:row-span-2 md:self-start">
+            <CodeLine className="text-xs  text-muted">// me.jpg</CodeLine>
             <div className="border border-outline bg-panel p-3">
               <img
                 src={developerPreview}
@@ -62,12 +62,7 @@ export default function HeroSection() {
                 className="block aspect-square w-full border border-outline bg-surface object-cover md:w-[260px]"
               />
             </div>
-            <div className="space-y-1 border border-outline px-4 py-4">
            
-              <CodeLine className="text-xs text-muted overflow-x-hidden">
-                private final String homeTown = <span className="text-primary">"Cebu, Philippines"</span>;
-              </CodeLine>
-            </div>
           </figure>
 
         </div>
