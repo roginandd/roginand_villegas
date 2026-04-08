@@ -5,6 +5,18 @@ import homePageImage from "../assets/projects/csps-web/home_page.png";
 import landingPageImage from "../assets/projects/csps-web/landing_page.png";
 import merchPageImage from "../assets/projects/csps-web/merch_page.png";
 import transactionPageImage from "../assets/projects/csps-web/transaction_page.png";
+import daeloApplicationsImage from "../assets/projects/daelo/applications.png";
+import daeloApplyFeedbackImage from "../assets/projects/daelo/apply_feedback.png";
+import daeloAwardImage from "../assets/projects/daelo/award.jpg";
+import daeloCodingImage from "../assets/projects/daelo/coding.png";
+import daeloDashboardImage from "../assets/projects/daelo/dashboard.png";
+import daeloJobDetailImage from "../assets/projects/daelo/job_detial.png";
+import daeloJobsImage from "../assets/projects/daelo/jobs.png";
+import daeloLandingImage from "../assets/projects/daelo/landing.png";
+import daeloLoginImage from "../assets/projects/daelo/login.png";
+import daeloPlaceImage from "../assets/projects/daelo/place.jpg";
+import daeloProcessImage from "../assets/projects/daelo/process.png";
+import daeloResumeBuilderImage from "../assets/projects/daelo/resume_builder.png";
 
 export const navigationItems = [
   { id: "source", label: "source" },
@@ -238,46 +250,64 @@ export const projects = [
     stack: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
     gallery: [
       {
-        fileLabel: "// interview-simulation",
-        windowTitle: "InterviewPracticeSession",
-        annotation: '@PreviewState("simulation")',
-        headline: "Interview practice session",
-        description:
-          "Runs question prompts, answer capture, and AI-backed coaching in one guided flow.",
-        rows: [
-          "Gemini interview prompt orchestration",
-          "candidate answer evaluation",
-          "feedback and retry handling",
-        ],
-        metrics: ["rounds:6", "feedback:ai", "schema:validated"],
+        fileLabel: "// landing.png",
+        imageSrc: daeloLandingImage,
+        imageAlt: "Daelo landing page",
       },
       {
-        fileLabel: "// resume-generation",
-        windowTitle: "ResumeOutputPipeline",
-        annotation: '@PreviewState("resume")',
-        headline: "Resume generation pipeline",
-        description:
-          "Transforms profile data and AI recommendations into structured resume output.",
-        rows: [
-          "resume content assembly",
-          "Firestore document persistence",
-          "schema-checked output formatting",
-        ],
-        metrics: ["resume:v1", "storage:firestore", "output:structured"],
+        fileLabel: "// login.png",
+        imageSrc: daeloLoginImage,
+        imageAlt: "Daelo login page",
       },
       {
-        fileLabel: "// evaluation-dashboard",
-        windowTitle: "CareerReadinessScoreboard",
-        annotation: '@PreviewState("evaluation")',
-        headline: "Career readiness scoring",
-        description:
-          "Summarizes interview performance, recommendations, and areas to improve.",
-        rows: [
-          "recommendation scoring",
-          "skill-gap feedback generation",
-          "frontend-ready evaluation payloads",
-        ],
-        metrics: ["score:84", "suggestions:5", "user-state:tracked"],
+        fileLabel: "// dashboard.png",
+        imageSrc: daeloDashboardImage,
+        imageAlt: "Daelo dashboard",
+      },
+      {
+        fileLabel: "// jobs.png",
+        imageSrc: daeloJobsImage,
+        imageAlt: "Daelo jobs page",
+      },
+      {
+        fileLabel: "// job_detial.png",
+        imageSrc: daeloJobDetailImage,
+        imageAlt: "Daelo job detail page",
+      },
+      {
+        fileLabel: "// applications.png",
+        imageSrc: daeloApplicationsImage,
+        imageAlt: "Daelo applications page",
+      },
+      {
+        fileLabel: "// apply_feedback.png",
+        imageSrc: daeloApplyFeedbackImage,
+        imageAlt: "Daelo application feedback page",
+      },
+      {
+        fileLabel: "// resume_builder.png",
+        imageSrc: daeloResumeBuilderImage,
+        imageAlt: "Daelo resume builder page",
+      },
+      {
+        fileLabel: "// coding.png",
+        imageSrc: daeloCodingImage,
+        imageAlt: "Daelo coding interview page",
+      },
+      {
+        fileLabel: "// process.png",
+        imageSrc: daeloProcessImage,
+        imageAlt: "Daelo process page",
+      },
+      {
+        fileLabel: "// award.jpg",
+        imageSrc: daeloAwardImage,
+        imageAlt: "Daelo award view",
+      },
+      {
+        fileLabel: "// place.jpg",
+        imageSrc: daeloPlaceImage,
+        imageAlt: "Daelo placement view",
       },
     ],
     sourceUrl: null,
@@ -358,7 +388,6 @@ export const projects = [
     liveUrl: "https://vista-cspsits.vercel.app",
     notes: null,
   },
-  ,
   {
     slug: "boc-safepass",
     endpoint: "/projects/boc-safepass",
