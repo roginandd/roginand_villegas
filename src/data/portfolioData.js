@@ -17,6 +17,14 @@ import daeloLoginImage from "../assets/projects/daelo/login.png";
 import daeloPlaceImage from "../assets/projects/daelo/place.jpg";
 import daeloProcessImage from "../assets/projects/daelo/process.png";
 import daeloResumeBuilderImage from "../assets/projects/daelo/resume_builder.png";
+import vistaBudgetImage from "../assets/projects/vista/budget.png";
+import vistaFinalistNoticeImage from "../assets/projects/vista/finalist_notice.jpg";
+import vistaLandingImage from "../assets/projects/vista/landing.png";
+import vistaMarketplaceImage from "../assets/projects/vista/marketplace.png";
+import vistaPerspectiveImage from "../assets/projects/vista/perspective.png";
+import vistaProductDetailImage from "../assets/projects/vista/product_detail.png";
+import vistaPropertyImage from "../assets/projects/vista/property.png";
+import vistaDemoVideo from "../assets/projects/vista/demo.mp4";
 
 export const navigationItems = [
   { id: "source", label: "source" },
@@ -250,6 +258,16 @@ export const projects = [
     stack: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
     gallery: [
       {
+        fileLabel: "// place.jpg",
+        imageSrc: daeloPlaceImage,
+        imageAlt: "Daelo placement view",
+      },
+      {
+        fileLabel: "// award.jpg",
+        imageSrc: daeloAwardImage,
+        imageAlt: "Daelo award view",
+      },
+      {
         fileLabel: "// landing.png",
         imageSrc: daeloLandingImage,
         imageAlt: "Daelo landing page",
@@ -299,16 +317,6 @@ export const projects = [
         imageSrc: daeloProcessImage,
         imageAlt: "Daelo process page",
       },
-      {
-        fileLabel: "// award.jpg",
-        imageSrc: daeloAwardImage,
-        imageAlt: "Daelo award view",
-      },
-      {
-        fileLabel: "// place.jpg",
-        imageSrc: daeloPlaceImage,
-        imageAlt: "Daelo placement view",
-      },
     ],
     sourceUrl: null,
     liveUrl: null,
@@ -341,47 +349,47 @@ export const projects = [
     highlights: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
     stack: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
     gallery: [
-      {
-        fileLabel: "// property-listing-intake",
-        windowTitle: "PropertyListingWorkflow",
-        annotation: '@PreviewState("listing")',
-        headline: "Property listing intake",
-        description:
-          "Handles listing creation, metadata storage, and media preparation for properties.",
-        rows: [
-          "listing field validation",
-          "Firestore property persistence",
-          "S3 media upload handling",
-        ],
-        metrics: ["listings:ready", "storage:s3", "forms:validated"],
+          {
+        fileLabel: "// finalist_notice.jpg",
+        imageSrc: vistaFinalistNoticeImage,
+        imageAlt: "Vista finalist notice",
       },
       {
-        fileLabel: "// virtual-staging-session",
-        windowTitle: "VirtualStagingSession",
-        annotation: '@PreviewState("staging")',
-        headline: "AI staging workflow",
-        description:
-          "Connects source property images with Gemini-based staging and session state tracking.",
-        rows: [
-          "Gemini staging request orchestration",
-          "session chat / state updates",
-          "generated image persistence",
-        ],
-        metrics: ["ai:gemini", "sessions:tracked", "images:processed"],
+        fileLabel: "// landing.png",
+        imageSrc: vistaLandingImage,
+        imageAlt: "Vista landing page",
       },
       {
-        fileLabel: "// buyer-visualization-preview",
-        windowTitle: "BuyerExperiencePreview",
-        annotation: '@PreviewState("experience")',
-        headline: "Property visualization output",
-        description:
-          "Presents staged property output to help buyers evaluate visual possibilities before decisions.",
-        rows: [
-          "before / after stage results",
-          "frontend integration payloads",
-          "media retrieval via cloud storage",
-        ],
-        metrics: ["preview:ready", "hackathon:finalist", "ui:connected"],
+        fileLabel: "// property.png",
+        imageSrc: vistaPropertyImage,
+        imageAlt: "Vista property page",
+      },
+      {
+        fileLabel: "// marketplace.png",
+        imageSrc: vistaMarketplaceImage,
+        imageAlt: "Vista marketplace page",
+      },
+      {
+        fileLabel: "// product_detail.png",
+        imageSrc: vistaProductDetailImage,
+        imageAlt: "Vista product detail page",
+      },
+      {
+        fileLabel: "// perspective.png",
+        imageSrc: vistaPerspectiveImage,
+        imageAlt: "Vista perspective page",
+      },
+      {
+        fileLabel: "// budget.png",
+        imageSrc: vistaBudgetImage,
+        imageAlt: "Vista budget page",
+      },
+  
+      {
+        fileLabel: "// demo.mp4",
+        videoSrc: vistaDemoVideo,
+        videoType: "video/mp4",
+        imageAlt: "Vista demo walkthrough video",
       },
     ],
     sourceUrl: "https://github.com/roginandd/vista-api",

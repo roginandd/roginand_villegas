@@ -24,7 +24,10 @@ export default function ProjectPreviewCarousel({ slides }) {
 
   const activeSlide = useMemo(() => slides[activeIndex], [activeIndex, slides]);
   const hasImagePreview = Boolean(activeSlide.imageSrc);
-  const imageOnlyCarousel = slides.every((slide) => Boolean(slide.imageSrc));
+  const hasVideoPreview = Boolean(activeSlide.videoSrc);
+  const mediaOnlyCarousel = slides.every(
+    (slide) => Boolean(slide.imageSrc) || Boolean(slide.videoSrc),
+  );
   const hasRows =
     Array.isArray(activeSlide.rows) && activeSlide.rows.length > 0;
   const hasMetrics =
@@ -44,7 +47,7 @@ export default function ProjectPreviewCarousel({ slides }) {
 
   return (
     <div className="space-y-3">
-      {imageOnlyCarousel ? (
+      {mediaOnlyCarousel ? (
         <div className="space-y-3">
           <div className="relative overflow-hidden border border-outline bg-surface">
             <button
@@ -66,11 +69,27 @@ export default function ProjectPreviewCarousel({ slides }) {
             </button>
 
             <div className="min-h-[300px] sm:min-h-[360px] md:min-h-[430px]">
-              <img
-                src={activeSlide.imageSrc}
-                alt={activeSlide.imageAlt ?? activeSlide.headline}
-                className="block h-full w-full bg-subtle object-contain object-top"
-              />
+              {hasVideoPreview ? (
+                <video
+                  className="block h-full w-full bg-subtle object-contain object-top"
+                  controls
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                >
+                  <source
+                    src={activeSlide.videoSrc}
+                    type={activeSlide.videoType ?? "video/mp4"}
+                  />
+                </video>
+              ) : (
+                <img
+                  src={activeSlide.imageSrc}
+                  alt={activeSlide.imageAlt ?? activeSlide.headline}
+                  className="block h-full w-full bg-subtle object-contain object-top"
+                />
+              )}
             </div>
           </div>
 
@@ -86,7 +105,7 @@ export default function ProjectPreviewCarousel({ slides }) {
                     ? "bg-primary border-primary"
                     : "bg-surface",
                 )}
-                aria-label={`Go to image ${index + 1}`}
+                aria-label={`Go to media ${index + 1}`}
               />
             ))}
           </div>
