@@ -131,7 +131,11 @@ export default function ProjectDetailModal({ project, onClose }) {
                 </div>
 
                 <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                  <MetadataField label="Built For" value={project.builtFor} />
+                  <MetadataField
+                    label="Built For"
+                    value={project.builtFor}
+                    href={project.builtForUrl}
+                  />
                   <MetadataField
                     label="Project Type"
                     value={project.projectType}
@@ -146,6 +150,17 @@ export default function ProjectDetailModal({ project, onClose }) {
                     href={project.liveUrl ?? undefined}
                   />
                 </div>
+
+                {Array.isArray(project.relatedLinks) &&
+                project.relatedLinks.length > 0 ? (
+                  <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {project.relatedLinks.map((link) => (
+                      <CodeLink key={link.url} href={link.url}>
+                        {link.label}
+                      </CodeLink>
+                    ))}
+                  </div>
+                ) : null}
               </section>
 
               <section className="space-y-3 border-b border-outline pb-8">

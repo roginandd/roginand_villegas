@@ -56,11 +56,11 @@ export const profile = {
 };
 
 export const about = {
- lines: [
-  "Builds backend systems centered on REST APIs, real-world workflows, and clean service boundaries.",
-  "Focuses on performance, SOLID-based architecture, and maintainable code for scalable systems.",
-  "3rd-year Computer Science student at the University of Cebu, delivering production-ready backend systems with clear data models and reliable APIs.",
-],
+  lines: [
+    "Builds backend systems centered on REST APIs, real-world workflows, and clean service boundaries.",
+    "Focuses on performance, SOLID-based architecture, and maintainable code for scalable systems.",
+    "3rd-year Computer Science student at the University of Cebu, delivering production-ready backend systems with clear data models and reliable APIs.",
+  ],
   tags: [
     { name: "@education", value: "BS Computer Science, University of Cebu" },
     { name: "@location", value: "Cebu, Philippines" },
@@ -115,10 +115,12 @@ export const projects = [
     status: "Production",
     title: "CSPS Web Application",
     projectType: "Student organization operations platform",
-    builtFor: "Computer Science students at the University of Cebu",
+    builtFor:
+      "CSPS organization (Computer Science Program Society), University of Cebu - Main Campus",
+    builtForUrl: "https://www.facebook.com/UCMainCSPS",
 
     summary:
-      "Engineered the backend for a production-grade student organization platform used by Computer Science students at the University of Cebu, unifying memberships, merchandise, ticketing, events, attendance, finance tracking, and administrative operations into a single system.",
+      "Engineered a production-grade platform for the CSPS organization (UC Main), unifying memberships, merchandise, ticketing, events, attendance, finance tracking, and administrative operations into a single system.",
 
     overview:
       "A centralized web platform that digitizes student organization operations by integrating identity management, membership lifecycle, commerce, event participation, attendance tracking, and financial reporting into one cohesive system.",
@@ -339,13 +341,24 @@ export const projects = [
     status: "Finalist",
     title: "Vista",
     projectType: "PropTech hackathon project",
-    builtFor: "Filipino Homes PropTech Hackathon",
+    builtFor: "Sinulog Hackathon hosted by PropTech Philippines",
+    builtForUrl: "https://proptechphilippines.com/",
+    relatedLinks: [
+      {
+        label: "PropTech Philippines",
+        url: "https://proptechphilippines.com/",
+      },
+      {
+        label: "Filipino Homes About",
+        url: "https://filipinohomes.com/about",
+      },
+    ],
     summary:
-      "Flask backend for an AI-assisted real estate platform that combines listing management, virtual staging sessions, Firestore persistence, and Amazon S3 media workflows.",
+      "AI-powered marketplace platform with chatbot and 360 VR integration for property discovery and visualization.",
     overview:
-      "An AI-powered property visualization platform that helps users visualize and customize properties before buying or selling.",
+      "A Real-Estate marketplace platform that combines AI chatbot support and 360 VR experiences to help buyers and sellers explore properties with better context.",
     story:
-      "Built during a PropTech hackathon to explore how AI can improve property presentation and buyer decision-making through virtual staging.",
+      "Built during the Sinulog Hackathon hosted by PropTech Philippines to explore how an AI-powered marketplace with chatbot and 360 VR can improve property presentation and buyer decision-making.",
     contributions: [
       "Contributed to the backend of the platform",
       "Built property listing backend workflows",

@@ -1,7 +1,31 @@
 import { useEffect, useState } from "react";
 
 export function useActiveSection(sectionIds) {
-  const [activeSection, setActiveSection] = useState(sectionIds[0] ?? "");
+  const resolveHashSection = () => {
+    const currentHash = window.location.hash.replace("#", "");
+    return sectionIds.includes(currentHash) ? currentHash : null;
+  };
+
+  const [activeSection, setActiveSection] = useState(
+    () => resolveHashSection() ?? sectionIds[0] ?? "",
+  );
+
+  useEffect(() => {
+    const syncFromHash = () => {
+      const nextSection = resolveHashSection();
+
+      if (nextSection) {
+        setActiveSection(nextSection);
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+
+    return () => {
+      window.removeEventListener("hashchange", syncFromHash);
+    };
+  }, [sectionIds]);
 
   useEffect(() => {
     const elements = sectionIds
@@ -16,15 +40,19 @@ export function useActiveSection(sectionIds) {
       (entries) => {
         const visibleEntries = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+          .sort(
+            (left, right) =>
+              Math.abs(left.boundingClientRect.top) -
+              Math.abs(right.boundingClientRect.top),
+          );
 
         if (visibleEntries[0]) {
           setActiveSection(visibleEntries[0].target.id);
         }
       },
       {
-        rootMargin: "-20% 0px -55% 0px",
-        threshold: [0.15, 0.35, 0.6],
+        rootMargin: "-18% 0px -65% 0px",
+        threshold: [0, 0.08, 0.2],
       },
     );
 

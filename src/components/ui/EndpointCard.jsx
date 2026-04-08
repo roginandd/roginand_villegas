@@ -40,6 +40,22 @@ export default function EndpointCard({ project, onOpen }) {
         <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
           {project.summary}
         </p>
+        <p className="mt-3 text-sm leading-6 text-muted">
+          <span className="text-ink">Built for: </span>
+          {project.builtForUrl ? (
+            <a
+              href={project.builtForUrl}
+              className="text-primary transition-colors duration-150 hover:text-accent"
+              target="_blank"
+              rel="noreferrer"
+              onClick={(event) => event.stopPropagation()}
+            >
+              {project.builtFor}
+            </a>
+          ) : (
+            <span>{project.builtFor}</span>
+          )}
+        </p>
 
         <div className="mt-6 space-y-2 border-t border-outline pt-5">
           <CodeLine className="text-xs text-muted">
