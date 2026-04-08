@@ -17,10 +17,20 @@ function CarouselNavButton({ direction, onClick, children }) {
 
 export default function ProjectPreviewCarousel({ slides }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMediaLoading, setIsMediaLoading] = useState(true);
 
   useEffect(() => {
     setActiveIndex(0);
   }, [slides]);
+
+  useEffect(() => {
+    const slide = slides[activeIndex];
+    const isMediaSlide =
+      Boolean(slide?.imageSrc) ||
+      Boolean(slide?.videoSrc) ||
+      Boolean(slide?.pdfSrc);
+    setIsMediaLoading(isMediaSlide);
+  }, [activeIndex, slides]);
 
   const activeSlide = useMemo(() => slides[activeIndex], [activeIndex, slides]);
   const hasImagePreview = Boolean(activeSlide.imageSrc);
@@ -72,7 +82,15 @@ export default function ProjectPreviewCarousel({ slides }) {
               {">"}
             </button>
 
-            <div className="aspect-[16/9] w-full bg-subtle">
+            <div className="relative aspect-[16/9] w-full bg-subtle">
+              {isMediaLoading ? (
+                <div className="absolute inset-0 z-[5] flex items-center justify-center bg-panel/70">
+                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                    loading media...
+                  </span>
+                </div>
+              ) : null}
+
               {hasVideoPreview ? (
                 <video
                   className="block h-full w-full object-contain object-top"
@@ -81,6 +99,8 @@ export default function ProjectPreviewCarousel({ slides }) {
                   muted
                   loop
                   autoPlay
+                  onLoadedData={() => setIsMediaLoading(false)}
+                  onError={() => setIsMediaLoading(false)}
                 >
                   <source
                     src={activeSlide.videoSrc}
@@ -92,13 +112,21 @@ export default function ProjectPreviewCarousel({ slides }) {
                   src={activeSlide.pdfSrc}
                   title={activeSlide.pdfTitle ?? activeSlide.headline}
                   className="block h-full w-full"
+                  onLoad={() => setIsMediaLoading(false)}
                 />
               ) : (
-                <img
-                  src={activeSlide.imageSrc}
-                  alt={activeSlide.imageAlt ?? activeSlide.headline}
-                  className="block h-full w-full object-contain object-top"
-                />
+                <div className="flex h-full w-full items-center justify-center">
+                  <img
+                    src={activeSlide.imageSrc}
+                    alt={activeSlide.imageAlt ?? activeSlide.headline}
+                    className="block max-h-full max-w-full object-contain object-top"
+                    style={{ imageRendering: "auto" }}
+                    decoding="async"
+                    loading="eager"
+                    onLoad={() => setIsMediaLoading(false)}
+                    onError={() => setIsMediaLoading(false)}
+                  />
+                </div>
               )}
             </div>
           </div>
