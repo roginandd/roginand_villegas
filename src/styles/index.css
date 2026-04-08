@@ -57,4 +57,29 @@
   .code-scroll::-webkit-scrollbar-thumb {
     background: #c8d0d4;
   }
+
+  .modal-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #c8d0d4 transparent;
+  }
+
+  .modal-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .modal-scroll::-webkit-scrollbar-thumb {
+    background: #c8d0d4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-backdrop-in,
+  .animate-panel-in,
+  .animate-blink {
+    animation: none !important;
+  }
 }

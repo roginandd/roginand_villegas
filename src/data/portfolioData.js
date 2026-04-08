@@ -1,9 +1,3 @@
-import bocSafePassPreview from "../assets/previews/boc-safepass-preview.svg";
-import cspsPlatformPreview from "../assets/previews/csps-platform-preview.svg";
-import daeloPreview from "../assets/previews/daelo-preview.svg";
-import fairGroupAssignmentPreview from "../assets/previews/fair-group-assignment-preview.svg";
-import vistaPreview from "../assets/previews/vista-preview.svg";
-
 export const navigationItems = [
   { id: "source", label: "source" },
   { id: "javadoc", label: "javadoc" },
@@ -68,6 +62,7 @@ export const techStack = [
 export const projects = [
   {
     slug: "csps-platform-backend",
+    
     endpoint: "/projects/csps-platform-backend",
     className: "CSPSPlatformBackend",
     status: "Production",
@@ -91,11 +86,50 @@ export const projects = [
     ],
     highlights: ["Java", "Spring Boot", "MySQL", "AWS S3", "JWT"],
     stack: ["Java", "Spring Boot", "MySQL", "AWS S3", "JWT"],
-    preview: {
-      src: cspsPlatformPreview,
-      label: "// csps-dashboard-preview.svg",
-      alt: "Preview panel for the CSPS student operations platform backend",
-    },
+    gallery: [
+      {
+        fileLabel: "// membership-dashboard",
+        windowTitle: "MembershipAdminView",
+        annotation: '@PreviewState("memberships")',
+        headline: "Semester membership dashboard",
+        description:
+          "Tracks active members, renewals, and officer-facing filters inside one operations surface.",
+        rows: [
+          "membershipService.getCurrentSemesterRecords()",
+          "renewal eligibility validation",
+          "officer-only admin actions",
+        ],
+        metrics: ["members:324", "renewals:58", "rbac:enabled"],
+      },
+      {
+        fileLabel: "// merch-checkout-flow",
+        windowTitle: "MerchOrderPipeline",
+        annotation: '@PreviewState("commerce")',
+        headline: "Cart to checkout workflow",
+        description:
+          "Shows the backend flow behind product ordering, stock checks, and purchase history.",
+        rows: [
+          "cart item aggregation",
+          "inventory integrity guard",
+          "purchase history persistence",
+        ],
+        metrics: ["orders:128", "stock-lock:on", "history:available"],
+      },
+      {
+        fileLabel: "// qr-attendance-panel",
+        windowTitle: "AttendanceScanConsole",
+        annotation: '@PreviewState("attendance")',
+        headline: "QR attendance event scan",
+        description:
+          "Connects membership state, event attendance, and scan recording for student operations.",
+        rows: [
+          "qrScanService.record()",
+          "event participation linkage",
+          "member validation before attendance save",
+        ],
+        metrics: ["scans:412", "events:14", "audit:stored"],
+      },
+    ],
     sourceUrl: "https://github.com/roginandd/CSPS-redesign-backend",
     liveUrl: "https://ucmncsps.vercel.app",
     notes: null,
@@ -109,7 +143,7 @@ export const projects = [
     projectType: "Client project proposal",
     builtFor: "Client project proposal for a Customs Administration system",
     summary:
-      "Access-control system for campus workflows with stakeholder approval, document review, QR issuance, visitor sessions, physical pass inventory, and entry logging.",
+      "QR-based access control proposal for stakeholder accreditation, visitor verification, entry tracking, and approval workflows in a Customs Administration setting.",
     overview:
       "A QR-based access control and verification system for stakeholder accreditation, visitor management, and facility entry tracking.",
     story:
@@ -124,11 +158,50 @@ export const projects = [
     ],
     highlights: ["Spring Boot", "PostgreSQL", "JWT", "AWS S3", "Layered architecture"],
     stack: ["Spring Boot", "PostgreSQL", "JWT", "AWS S3"],
-    preview: {
-      src: bocSafePassPreview,
-      label: "// access-control-preview.svg",
-      alt: "Preview panel for the BOC SafePass QR access and verification workflow",
-    },
+    gallery: [
+      {
+        fileLabel: "// stakeholder-accreditation",
+        windowTitle: "StakeholderReviewQueue",
+        annotation: '@PreviewState("approvals")',
+        headline: "Accreditation approval queue",
+        description:
+          "Centralizes document review, remarks, and decision history before QR issuance.",
+        rows: [
+          "document verification workflow",
+          "reviewer role access checks",
+          "approval history persistence",
+        ],
+        metrics: ["pending:24", "approved:108", "remarks:required"],
+      },
+      {
+        fileLabel: "// qr-access-verification",
+        windowTitle: "QrVerificationPanel",
+        annotation: '@PreviewState("access")',
+        headline: "QR-based entry validation",
+        description:
+          "Verifies access credentials at the gate and links sessions to physical pass handling.",
+        rows: [
+          "qr status check",
+          "pass inventory assignment",
+          "session activation logic",
+        ],
+        metrics: ["gate:active", "passes:39", "session-state:tracked"],
+      },
+      {
+        fileLabel: "// entry-log-report",
+        windowTitle: "EntryAuditConsole",
+        annotation: '@PreviewState("logging")',
+        headline: "Movement and reporting log",
+        description:
+          "Records facility movement for visitors and stakeholders with audit-ready history.",
+        rows: [
+          "entry / exit timestamps",
+          "stakeholder and visitor branching",
+          "report-ready event log records",
+        ],
+        metrics: ["logs:842", "reports:daily", "audit:enabled"],
+      },
+    ],
     sourceUrl: "https://github.com/roginandd/safepass_api",
     liveUrl: null,
     notes: null,
@@ -158,11 +231,50 @@ export const projects = [
     ],
     highlights: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
     stack: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
-    preview: {
-      src: daeloPreview,
-      label: "// interview-simulation-preview.svg",
-      alt: "Preview panel for the Daelo AI interview and resume workflow",
-    },
+    gallery: [
+      {
+        fileLabel: "// interview-simulation",
+        windowTitle: "InterviewPracticeSession",
+        annotation: '@PreviewState("simulation")',
+        headline: "Interview practice session",
+        description:
+          "Runs question prompts, answer capture, and AI-backed coaching in one guided flow.",
+        rows: [
+          "Gemini interview prompt orchestration",
+          "candidate answer evaluation",
+          "feedback and retry handling",
+        ],
+        metrics: ["rounds:6", "feedback:ai", "schema:validated"],
+      },
+      {
+        fileLabel: "// resume-generation",
+        windowTitle: "ResumeOutputPipeline",
+        annotation: '@PreviewState("resume")',
+        headline: "Resume generation pipeline",
+        description:
+          "Transforms profile data and AI recommendations into structured resume output.",
+        rows: [
+          "resume content assembly",
+          "Firestore document persistence",
+          "schema-checked output formatting",
+        ],
+        metrics: ["resume:v1", "storage:firestore", "output:structured"],
+      },
+      {
+        fileLabel: "// evaluation-dashboard",
+        windowTitle: "CareerReadinessScoreboard",
+        annotation: '@PreviewState("evaluation")',
+        headline: "Career readiness scoring",
+        description:
+          "Summarizes interview performance, recommendations, and areas to improve.",
+        rows: [
+          "recommendation scoring",
+          "skill-gap feedback generation",
+          "frontend-ready evaluation payloads",
+        ],
+        metrics: ["score:84", "suggestions:5", "user-state:tracked"],
+      },
+    ],
     sourceUrl: null,
     liveUrl: null,
     notes: null,
@@ -192,11 +304,50 @@ export const projects = [
     ],
     highlights: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
     stack: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
-    preview: {
-      src: vistaPreview,
-      label: "// virtual-staging-preview.svg",
-      alt: "Preview panel for the Vista property visualization and virtual staging workflow",
-    },
+    gallery: [
+      {
+        fileLabel: "// property-listing-intake",
+        windowTitle: "PropertyListingWorkflow",
+        annotation: '@PreviewState("listing")',
+        headline: "Property listing intake",
+        description:
+          "Handles listing creation, metadata storage, and media preparation for properties.",
+        rows: [
+          "listing field validation",
+          "Firestore property persistence",
+          "S3 media upload handling",
+        ],
+        metrics: ["listings:ready", "storage:s3", "forms:validated"],
+      },
+      {
+        fileLabel: "// virtual-staging-session",
+        windowTitle: "VirtualStagingSession",
+        annotation: '@PreviewState("staging")',
+        headline: "AI staging workflow",
+        description:
+          "Connects source property images with Gemini-based staging and session state tracking.",
+        rows: [
+          "Gemini staging request orchestration",
+          "session chat / state updates",
+          "generated image persistence",
+        ],
+        metrics: ["ai:gemini", "sessions:tracked", "images:processed"],
+      },
+      {
+        fileLabel: "// buyer-visualization-preview",
+        windowTitle: "BuyerExperiencePreview",
+        annotation: '@PreviewState("experience")',
+        headline: "Property visualization output",
+        description:
+          "Presents staged property output to help buyers evaluate visual possibilities before decisions.",
+        rows: [
+          "before / after stage results",
+          "frontend integration payloads",
+          "media retrieval via cloud storage",
+        ],
+        metrics: ["preview:ready", "hackathon:finalist", "ui:connected"],
+      },
+    ],
     sourceUrl: "https://github.com/roginandd/vista-api",
     liveUrl: "https://vista-cspsits.vercel.app",
     notes: null,
@@ -224,11 +375,50 @@ export const projects = [
     ],
     highlights: ["Spring Boot", "React", "Hybrid algorithm design"],
     stack: ["Spring Boot", "React", "Hybrid algorithm design"],
-    preview: {
-      src: fairGroupAssignmentPreview,
-      label: "// grouping-result-preview.svg",
-      alt: "Preview panel for the Fair Group Assignment System result screen",
-    },
+    gallery: [
+      {
+        fileLabel: "// csv-upload-intake",
+        windowTitle: "StudentImportConsole",
+        annotation: '@PreviewState("input")',
+        headline: "CSV intake and preprocessing",
+        description:
+          "Loads student records and normalizes grade inputs before running the grouping algorithm.",
+        rows: [
+          "csv parsing and validation",
+          "grade sorting preparation",
+          "group count constraint checks",
+        ],
+        metrics: ["csv:loaded", "records:48", "validation:pass"],
+      },
+      {
+        fileLabel: "// balanced-group-output",
+        windowTitle: "GroupResultPreview",
+        annotation: '@PreviewState("output")',
+        headline: "Balanced team output",
+        description:
+          "Displays generated groups with comparable grade distribution across teams.",
+        rows: [
+          "round-robin distribution",
+          "group size consistency checks",
+          "balanced output rendering",
+        ],
+        metrics: ["groups:6", "variance:low", "fairness:improved"],
+      },
+      {
+        fileLabel: "// hybrid-algorithm-pass",
+        windowTitle: "HybridBalancerTrace",
+        annotation: '@PreviewState("algorithm")',
+        headline: "Hybrid balancing pass",
+        description:
+          "Refines groups using greedy and divide-and-conquer logic after the initial distribution phase.",
+        rows: [
+          "greedy partition refinement",
+          "divide-and-conquer rebalance step",
+          "performance-aware assignment logic",
+        ],
+        metrics: ["algo:hybrid", "phase:multi-step", "scalability:reasonable"],
+      },
+    ],
     sourceUrl: "https://github.com/roginandd/FairGroupAssignment",
     liveUrl: "https://fair-group-assignment.vercel.app",
     notes: null,

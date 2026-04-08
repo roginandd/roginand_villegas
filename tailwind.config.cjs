@@ -20,6 +20,7 @@ module.exports = {
       },
       maxWidth: {
         artifact: "780px",
+        modal: "1120px",
       },
       letterSpacing: {
         technical: "-0.05em",
@@ -29,9 +30,19 @@ module.exports = {
           "0%, 49%": { opacity: "1" },
           "50%, 100%": { opacity: "0" },
         },
+        backdropIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        panelIn: {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         blink: "blink 1.15s steps(1, end) infinite",
+        "backdrop-in": "backdropIn 180ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "panel-in": "panelIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both",
       },
     },
   },
