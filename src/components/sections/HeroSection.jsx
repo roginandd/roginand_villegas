@@ -1,0 +1,47 @@
+import { profile } from "../../data/portfolioData";
+import CodeLine from "../ui/CodeLine";
+import CodeLink from "../ui/CodeLink";
+import SectionShell from "../ui/SectionShell";
+
+export default function HeroSection() {
+  const [firstName, lastName] = profile.name.split(" ");
+
+  return (
+    <SectionShell as="header" id="source" className="space-y-10">
+      <div className="space-y-1">
+        <CodeLine className="text-accent">@RestController</CodeLine>
+        <CodeLine className="text-accent">
+          @RequestMapping(<span className="text-primary">"{profile.requestMapping}"</span>)
+        </CodeLine>
+        <CodeLine className="text-ink">
+          public class <span className="text-primary">{profile.className}</span> {"{"}
+          <span
+            aria-hidden="true"
+            className="ml-2 inline-block h-4 w-2 translate-y-[2px] bg-primary align-middle animate-blink"
+          />
+        </CodeLine>
+      </div>
+
+      <div className="space-y-6">
+        <h1 className="font-sans text-5xl font-extrabold uppercase leading-none tracking-technical text-ink sm:text-6xl md:text-7xl">
+          {firstName} <span className="text-accent">{lastName.charAt(0)}</span>
+          {lastName.slice(1)}
+        </h1>
+
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+          <p className="font-mono text-sm text-muted">
+            // {profile.role} · {profile.school} · {profile.location}
+          </p>
+          <div className="border border-outline px-3 py-1 font-mono text-xs text-ink">
+            "{profile.statusMessage}"
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-x-8 gap-y-3">
+        <CodeLink href="#endpoints">getProjects()</CodeLink>
+        <CodeLink href="#contact">contact()</CodeLink>
+      </div>
+    </SectionShell>
+  );
+}
