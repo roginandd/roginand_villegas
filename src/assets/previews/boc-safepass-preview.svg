@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 580" fill="none">
+  <rect width="920" height="580" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="884" height="544" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="18" y="18" width="884" height="46" fill="#F4F7F8" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="40" y="47" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="20">// safepass/access-control</text>
+  <rect x="44" y="96" width="300" height="190" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="64" y="125" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@StakeholderApproval</text>
+  <text x="64" y="168" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="24">pending accreditation queue</text>
+  <text x="64" y="205" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="20">documents.review(status)</text>
+  <text x="64" y="238" fill="#6B6B6B" font-family="'DM Sans', sans-serif" font-size="18">IDs, clearances, approvals, remarks</text>
+  <rect x="380" y="96" width="220" height="190" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="400" y="125" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@QrVerification</text>
+  <rect x="433" y="152" width="114" height="114" stroke="#007396" stroke-width="3"/>
+  <path d="M453 172h24v24h-24zm50 0h24v24h-24zm-50 50h24v24h-24zm50 50h24v-24h-24z" fill="#007396"/>
+  <rect x="646" y="96" width="220" height="190" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="666" y="125" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@EntryLog</text>
+  <text x="666" y="168" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="18">08:10 IN / stakeholder</text>
+  <text x="666" y="202" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="18">09:04 IN / visitor</text>
+  <text x="666" y="236" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="18">11:32 OUT / pass-returned</text>
+  <rect x="44" y="324" width="822" height="198" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="64" y="352" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="18">private AccessControlWorkflow build() {</text>
+  <text x="84" y="394" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="20">role-gated approvals, cloud-stored documents, QR issuance, pass assignment, and facility movement logs</text>
+  <line x1="84" y1="421" x2="837" y2="421" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="84" y="457" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="20">auditTrail.persist(stakeholderId, verifierId, action);</text>
+  <text x="64" y="498" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="18">}</text>
+</svg>

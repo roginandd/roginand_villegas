@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 580" fill="none">
+  <rect width="920" height="580" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="884" height="544" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="18" y="18" width="884" height="46" fill="#F4F7F8" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="40" y="47" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="20">// csps-admin/dashboard</text>
+  <rect x="42" y="98" width="250" height="168" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="62" y="126" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Memberships</text>
+  <text x="62" y="172" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="44">324</text>
+  <text x="62" y="205" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="24">active members</text>
+  <text x="62" y="238" fill="#6B6B6B" font-family="'DM Sans', sans-serif" font-size="18">semester-based renewal tracking</text>
+  <rect x="328" y="98" width="250" height="168" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="348" y="126" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Commerce</text>
+  <text x="348" y="164" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="22">cart -&gt; checkout -&gt; order history</text>
+  <line x1="348" y1="188" x2="558" y2="188" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="348" y="222" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="20">inventoryGuard.validate()</text>
+  <text x="348" y="250" fill="#6B6B6B" font-family="'DM Sans', sans-serif" font-size="18">transaction consistency before commit</text>
+  <rect x="614" y="98" width="250" height="168" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="634" y="126" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Attendance</text>
+  <text x="634" y="164" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="20">qrScanService.record()</text>
+  <text x="634" y="198" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="24">event participation</text>
+  <text x="634" y="232" fill="#6B6B6B" font-family="'DM Sans', sans-serif" font-size="18">membership-aware QR workflows</text>
+  <rect x="42" y="306" width="822" height="216" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="62" y="335" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="18">public class StudentOperationsModule {</text>
+  <text x="82" y="378" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Events</text>
+  <text x="180" y="378" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="20">launch registrations and attendance sessions</text>
+  <text x="82" y="414" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Merch</text>
+  <text x="180" y="414" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="20">manage catalog, orders, checkout, and purchase history</text>
+  <text x="82" y="450" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@Admin</text>
+  <text x="180" y="450" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="20">email workflows, audit trails, and role-based control</text>
+  <text x="62" y="497" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="18">}</text>
+</svg>

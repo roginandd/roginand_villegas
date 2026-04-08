@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 580" fill="none">
+  <rect width="920" height="580" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="884" height="544" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="18" y="18" width="884" height="46" fill="#F4F7F8" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="40" y="47" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="20">// vista/virtual-staging</text>
+  <rect x="44" y="92" width="382" height="252" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="66" y="122" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@OriginalRoom</text>
+  <rect x="84" y="156" width="300" height="146" fill="#F4F7F8" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="114" y="222" width="62" height="52" fill="#E9EEF0" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="182" y="246" width="120" height="28" fill="#E9EEF0" stroke="#C8D0D4" stroke-width="2"/>
+  <line x1="84" y1="218" x2="384" y2="218" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="494" y="92" width="372" height="252" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="516" y="122" fill="#ED8B00" font-family="'JetBrains Mono', monospace" font-size="18">@AiStaged</text>
+  <rect x="534" y="156" width="292" height="146" fill="#F4F7F8" stroke="#C8D0D4" stroke-width="2"/>
+  <rect x="566" y="202" width="62" height="72" fill="#DCEEF4" stroke="#007396" stroke-width="2"/>
+  <rect x="646" y="232" width="108" height="42" fill="#FEF1E1" stroke="#ED8B00" stroke-width="2"/>
+  <text x="558" y="324" fill="#007396" font-family="'JetBrains Mono', monospace" font-size="18">gemini.generateVirtualStage()</text>
+  <rect x="44" y="382" width="822" height="142" stroke="#C8D0D4" stroke-width="2"/>
+  <text x="66" y="412" fill="#6B6B6B" font-family="'JetBrains Mono', monospace" font-size="18">property -&gt; session -&gt; s3 image -&gt; gemini -&gt; staged output</text>
+  <text x="66" y="454" fill="#0D0D0D" font-family="'DM Sans', sans-serif" font-size="22">AI-assisted staging for buyer visualization and property presentation</text>
+  <text x="66" y="489" fill="#6B6B6B" font-family="'DM Sans', sans-serif" font-size="18">Firestore session state with cloud-backed media handling</text>
+</svg>
