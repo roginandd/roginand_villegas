@@ -24,6 +24,7 @@ export default function ProjectPreviewCarousel({ slides }) {
 
   const activeSlide = useMemo(() => slides[activeIndex], [activeIndex, slides]);
   const hasImagePreview = Boolean(activeSlide.imageSrc);
+  const imageOnlyCarousel = slides.every((slide) => Boolean(slide.imageSrc));
   const hasRows =
     Array.isArray(activeSlide.rows) && activeSlide.rows.length > 0;
   const hasMetrics =
@@ -43,115 +44,168 @@ export default function ProjectPreviewCarousel({ slides }) {
 
   return (
     <div className="space-y-3">
-      <p className="font-mono text-xs text-muted">{activeSlide.fileLabel}</p>
+      {imageOnlyCarousel ? (
+        <div className="space-y-3">
+          <div className="relative overflow-hidden border border-outline bg-surface">
+            <button
+              type="button"
+              onClick={goPrevious}
+              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 border border-outline bg-surface/90 px-3 py-2 font-mono text-xs uppercase tracking-[0.18em] text-primary transition-colors duration-150 hover:border-primary hover:text-accent"
+              aria-label="Previous image"
+            >
+              {"<"}
+            </button>
 
-      <div className="border border-outline bg-panel">
-        <div className="flex items-center justify-between gap-3 border-b border-outline px-3 py-2">
-          <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-            {activeSlide.windowTitle}
-          </p>
-          <p className="font-mono text-[0.7rem] text-accent">
-            {activeSlide.annotation}
-          </p>
-        </div>
+            <button
+              type="button"
+              onClick={goNext}
+              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 border border-outline bg-surface/90 px-3 py-2 font-mono text-xs uppercase tracking-[0.18em] text-primary transition-colors duration-150 hover:border-primary hover:text-accent"
+              aria-label="Next image"
+            >
+              {">"}
+            </button>
 
-        <div className="space-y-5 p-4 md:p-5">
-          {hasImagePreview ? (
-            <div className="overflow-hidden border border-outline bg-surface">
+            <div className="min-h-[300px] sm:min-h-[360px] md:min-h-[430px]">
               <img
                 src={activeSlide.imageSrc}
                 alt={activeSlide.imageAlt ?? activeSlide.headline}
-                className="block max-h-[34rem] w-full bg-subtle object-contain object-top"
+                className="block h-full w-full bg-subtle object-contain object-top"
               />
             </div>
-          ) : null}
-
-          <div className="border border-outline bg-surface p-4">
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-              activePreview();
-            </p>
-            <h3 className="mt-3 font-display text-2xl font-bold uppercase tracking-technical text-ink">
-              {activeSlide.headline}
-            </h3>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
-              {activeSlide.description}
-            </p>
           </div>
 
-          {hasRows || hasMetrics ? (
-            <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
-              {hasRows ? (
-                <div className="border border-outline bg-surface px-4 py-4">
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-                    implementation.log
-                  </p>
-                  <div className="mt-4 space-y-2">
-                    {activeSlide.rows.map((row, index) => (
-                      <div
-                        key={row}
-                        className="flex items-start gap-3 border-b border-outline/70 pb-2 last:border-b-0 last:pb-0"
-                      >
-                        <span className="font-mono text-xs text-muted">
-                          {(index + 1).toString().padStart(2, "0")}
-                        </span>
-                        <span className="font-mono text-sm text-primary">
-                          {row}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+          <div className="flex justify-center gap-2">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.fileLabel}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={cn(
+                  "h-2.5 w-2.5 border border-outline transition-colors duration-150",
+                  index === activeIndex
+                    ? "bg-primary border-primary"
+                    : "bg-surface",
+                )}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <>
+          <p className="font-mono text-xs text-muted">
+            {activeSlide.fileLabel}
+          </p>
+
+          <div className="border border-outline bg-panel">
+            <div className="flex items-center justify-between gap-3 border-b border-outline px-3 py-2">
+              <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                {activeSlide.windowTitle}
+              </p>
+              <p className="font-mono text-[0.7rem] text-accent">
+                {activeSlide.annotation}
+              </p>
+            </div>
+
+            <div className="space-y-5 p-4 md:p-5">
+              {hasImagePreview ? (
+                <div className="overflow-hidden border border-outline bg-surface">
+                  <img
+                    src={activeSlide.imageSrc}
+                    alt={activeSlide.imageAlt ?? activeSlide.headline}
+                    className="block max-h-[34rem] w-full bg-subtle object-contain object-top"
+                  />
                 </div>
               ) : null}
 
-              {hasMetrics ? (
-                <div className="border border-outline bg-surface px-4 py-4">
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-                    runtime.state
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {activeSlide.metrics.map((metric) => (
-                      <span
-                        key={metric}
-                        className="border border-outline bg-panel px-2 py-1 font-mono text-xs text-primary"
-                      >
-                        {metric}
-                      </span>
-                    ))}
-                  </div>
+              <div className="border border-outline bg-surface p-4">
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                  activePreview();
+                </p>
+                <h3 className="mt-3 font-display text-2xl font-bold uppercase tracking-technical text-ink">
+                  {activeSlide.headline}
+                </h3>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
+                  {activeSlide.description}
+                </p>
+              </div>
+
+              {hasRows || hasMetrics ? (
+                <div className="grid gap-3 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
+                  {hasRows ? (
+                    <div className="border border-outline bg-surface px-4 py-4">
+                      <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                        implementation.log
+                      </p>
+                      <div className="mt-4 space-y-2">
+                        {activeSlide.rows.map((row, index) => (
+                          <div
+                            key={row}
+                            className="flex items-start gap-3 border-b border-outline/70 pb-2 last:border-b-0 last:pb-0"
+                          >
+                            <span className="font-mono text-xs text-muted">
+                              {(index + 1).toString().padStart(2, "0")}
+                            </span>
+                            <span className="font-mono text-sm text-primary">
+                              {row}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {hasMetrics ? (
+                    <div className="border border-outline bg-surface px-4 py-4">
+                      <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                        runtime.state
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {activeSlide.metrics.map((metric) => (
+                          <span
+                            key={metric}
+                            className="border border-outline bg-panel px-2 py-1 font-mono text-xs text-primary"
+                          >
+                            {metric}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
             </div>
-          ) : null}
-        </div>
-      </div>
+          </div>
 
-      <div className="flex flex-col gap-3 border border-outline px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex gap-2">
-          <CarouselNavButton direction="previous" onClick={goPrevious}>
-            previous()
-          </CarouselNavButton>
-          <CarouselNavButton direction="next" onClick={goNext}>
-            next()
-          </CarouselNavButton>
-        </div>
+          <div className="flex flex-col gap-3 border border-outline px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex gap-2">
+              <CarouselNavButton direction="previous" onClick={goPrevious}>
+                previous()
+              </CarouselNavButton>
+              <CarouselNavButton direction="next" onClick={goNext}>
+                next()
+              </CarouselNavButton>
+            </div>
 
-        <div className="flex flex-wrap gap-2">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.fileLabel}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              className={cn(
-                "h-3 w-3 border border-outline transition-colors duration-150",
-                index === activeIndex
-                  ? "bg-primary border-primary"
-                  : "bg-surface",
-              )}
-              aria-label={`Go to preview ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
+            <div className="flex flex-wrap gap-2">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.fileLabel}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={cn(
+                    "h-3 w-3 border border-outline transition-colors duration-150",
+                    index === activeIndex
+                      ? "bg-primary border-primary"
+                      : "bg-surface",
+                  )}
+                  aria-label={`Go to preview ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

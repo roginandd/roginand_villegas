@@ -95,13 +95,17 @@ export default function ProjectDetailModal({ project, onClose }) {
               <div className="space-y-1">
                 <CodeLine className="text-accent">@ProjectDetail</CodeLine>
                 <CodeLine className="text-accent">
-                  @Path(<span className="text-primary">"{project.endpoint}"</span>)
+                  @Path(
+                  <span className="text-primary">"{project.endpoint}"</span>)
                 </CodeLine>
                 <CodeLine className="text-ink">
-                  public class <span className="text-primary">{project.className}</span> {"{"}
+                  public class{" "}
+                  <span className="text-primary">{project.className}</span>{" "}
+                  {"{"}
                 </CodeLine>
                 <CodeLine className="text-xs text-muted">
-                  @Status(<span className="text-primary">"{project.status}"</span>)
+                  @Status(
+                  <span className="text-primary">"{project.status}"</span>)
                 </CodeLine>
               </div>
 
@@ -115,16 +119,27 @@ export default function ProjectDetailModal({ project, onClose }) {
             <div className="space-y-8 px-4 py-5 md:px-6 md:py-6">
               <section className="space-y-4 border-b border-outline pb-8">
                 <div className="space-y-3">
+                  <CodeLine className="text-xs uppercase tracking-[0.18em] text-muted">
+                    // {project.projectComment}
+                  </CodeLine>
                   <h2 className="font-display text-3xl font-bold uppercase tracking-technical text-ink md:text-4xl">
                     {project.title}
                   </h2>
-                  <p className="max-w-4xl text-base leading-7 text-muted">{project.summary}</p>
+                  <p className="max-w-4xl text-base leading-7 text-muted">
+                    {project.summary}
+                  </p>
                 </div>
 
                 <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                   <MetadataField label="Built For" value={project.builtFor} />
-                  <MetadataField label="Project Type" value={project.projectType} />
-                  <MetadataField label="Stack" value={project.stack.join(" • ")} />
+                  <MetadataField
+                    label="Project Type"
+                    value={project.projectType}
+                  />
+                  <MetadataField
+                    label="Stack"
+                    value={project.stack.join(" • ")}
+                  />
                   <MetadataField
                     label="Live Link"
                     value={project.liveUrl ?? "source preview only"}
@@ -145,7 +160,9 @@ export default function ProjectDetailModal({ project, onClose }) {
                 </MethodBlock>
 
                 <MethodBlock signature="private String projectStory()">
-                  <p className="max-w-3xl text-base leading-7 text-muted">{project.story}</p>
+                  <p className="max-w-3xl text-base leading-7 text-muted">
+                    {project.story}
+                  </p>
                 </MethodBlock>
 
                 <MethodBlock signature="private List<String> contributions()">
@@ -163,13 +180,17 @@ export default function ProjectDetailModal({ project, onClose }) {
                 </MethodBlock>
 
                 <div className="space-y-3 border-t border-outline pt-6">
-                  <CodeLine className="text-sm text-muted">// navigation</CodeLine>
+                  <CodeLine className="text-sm text-muted">
+                    // navigation
+                  </CodeLine>
                   <div className="flex flex-wrap gap-x-8 gap-y-3">
                     {project.liveUrl ? (
                       <CodeLink href={project.liveUrl}>openLiveDemo()</CodeLink>
                     ) : null}
                     {project.sourceUrl ? (
-                      <CodeLink href={project.sourceUrl}>viewRepository()</CodeLink>
+                      <CodeLink href={project.sourceUrl}>
+                        viewRepository()
+                      </CodeLink>
                     ) : null}
                     <CodeButton onClick={onClose}>closeModal()</CodeButton>
                   </div>
@@ -180,7 +201,8 @@ export default function ProjectDetailModal({ project, onClose }) {
 
           <div className="shrink-0 border-t border-outline px-4 py-3 md:px-6">
             <CodeLine className="text-[0.7rem] uppercase tracking-[0.22em] text-primary">
-              {"} // end "}{project.className}.java
+              {"} // end "}
+              {project.className}.java
             </CodeLine>
           </div>
         </div>

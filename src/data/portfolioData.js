@@ -82,6 +82,7 @@ export const projects = [
     slug: "csps-platform-backend",
     endpoint: "/projects/csps-platform-backend",
     className: "CSPSWebApplication",
+    projectComment: "ORGANIZATION PROJECT",
     status: "Production",
     title: "CSPS Web Application",
     projectType: "Student organization operations platform",
@@ -210,9 +211,159 @@ export const projects = [
     notes: null,
   },
   {
+    slug: "daelo",
+    endpoint: "/projects/daelo",
+    className: "Daelo",
+    projectComment: "HACKATHON",
+    status: "3rd Place Winner",
+    title: "Daelo",
+    projectType: "Hackathon project",
+    builtFor: "University of Cebu hackathon project",
+    summary:
+      "AI-powered career simulation platform focused on interview readiness, resume generation, and evaluation for students preparing for job applications.",
+    overview:
+      "An AI-powered career simulation platform that helps students prepare for job applications through interview simulation, resume generation, and evaluation.",
+    story:
+      "Built as a hackathon project focused on helping students become more prepared and confident before applying for real jobs.",
+    contributions: [
+      "Built backend features for interview simulation and feedback",
+      "Integrated AI workflows using Google ADK and Gemini",
+      "Designed authentication and user management using Firebase",
+      "Implemented Firestore-based backend data handling",
+      "Developed structured AI pipelines for recommendations, resume outputs, and evaluation",
+      "Applied schema-based validation for reliable AI outputs",
+      "Contributed to frontend integration using React",
+    ],
+    highlights: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
+    stack: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
+    gallery: [
+      {
+        fileLabel: "// interview-simulation",
+        windowTitle: "InterviewPracticeSession",
+        annotation: '@PreviewState("simulation")',
+        headline: "Interview practice session",
+        description:
+          "Runs question prompts, answer capture, and AI-backed coaching in one guided flow.",
+        rows: [
+          "Gemini interview prompt orchestration",
+          "candidate answer evaluation",
+          "feedback and retry handling",
+        ],
+        metrics: ["rounds:6", "feedback:ai", "schema:validated"],
+      },
+      {
+        fileLabel: "// resume-generation",
+        windowTitle: "ResumeOutputPipeline",
+        annotation: '@PreviewState("resume")',
+        headline: "Resume generation pipeline",
+        description:
+          "Transforms profile data and AI recommendations into structured resume output.",
+        rows: [
+          "resume content assembly",
+          "Firestore document persistence",
+          "schema-checked output formatting",
+        ],
+        metrics: ["resume:v1", "storage:firestore", "output:structured"],
+      },
+      {
+        fileLabel: "// evaluation-dashboard",
+        windowTitle: "CareerReadinessScoreboard",
+        annotation: '@PreviewState("evaluation")',
+        headline: "Career readiness scoring",
+        description:
+          "Summarizes interview performance, recommendations, and areas to improve.",
+        rows: [
+          "recommendation scoring",
+          "skill-gap feedback generation",
+          "frontend-ready evaluation payloads",
+        ],
+        metrics: ["score:84", "suggestions:5", "user-state:tracked"],
+      },
+    ],
+    sourceUrl: null,
+    liveUrl: null,
+    notes: null,
+  },
+  {
+    slug: "vista",
+    endpoint: "/projects/vista",
+    className: "Vista",
+    projectComment: "HACKATHON",
+    status: "Finalist",
+    title: "Vista",
+    projectType: "PropTech hackathon project",
+    builtFor: "Filipino Homes PropTech Hackathon",
+    summary:
+      "Flask backend for an AI-assisted real estate platform that combines listing management, virtual staging sessions, Firestore persistence, and Amazon S3 media workflows.",
+    overview:
+      "An AI-powered property visualization platform that helps users visualize and customize properties before buying or selling.",
+    story:
+      "Built during a PropTech hackathon to explore how AI can improve property presentation and buyer decision-making through virtual staging.",
+    contributions: [
+      "Contributed to the backend of the platform",
+      "Built property listing backend workflows",
+      "Implemented AI-powered virtual staging flows using Gemini",
+      "Integrated Firestore for property and session data",
+      "Integrated AWS S3 for media handling",
+      "Developed backend flows connecting property data, image processing, and AI generation",
+      "Contributed to frontend integration using React",
+    ],
+    highlights: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
+    stack: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
+    gallery: [
+      {
+        fileLabel: "// property-listing-intake",
+        windowTitle: "PropertyListingWorkflow",
+        annotation: '@PreviewState("listing")',
+        headline: "Property listing intake",
+        description:
+          "Handles listing creation, metadata storage, and media preparation for properties.",
+        rows: [
+          "listing field validation",
+          "Firestore property persistence",
+          "S3 media upload handling",
+        ],
+        metrics: ["listings:ready", "storage:s3", "forms:validated"],
+      },
+      {
+        fileLabel: "// virtual-staging-session",
+        windowTitle: "VirtualStagingSession",
+        annotation: '@PreviewState("staging")',
+        headline: "AI staging workflow",
+        description:
+          "Connects source property images with Gemini-based staging and session state tracking.",
+        rows: [
+          "Gemini staging request orchestration",
+          "session chat / state updates",
+          "generated image persistence",
+        ],
+        metrics: ["ai:gemini", "sessions:tracked", "images:processed"],
+      },
+      {
+        fileLabel: "// buyer-visualization-preview",
+        windowTitle: "BuyerExperiencePreview",
+        annotation: '@PreviewState("experience")',
+        headline: "Property visualization output",
+        description:
+          "Presents staged property output to help buyers evaluate visual possibilities before decisions.",
+        rows: [
+          "before / after stage results",
+          "frontend integration payloads",
+          "media retrieval via cloud storage",
+        ],
+        metrics: ["preview:ready", "hackathon:finalist", "ui:connected"],
+      },
+    ],
+    sourceUrl: "https://github.com/roginandd/vista-api",
+    liveUrl: "https://vista-cspsits.vercel.app",
+    notes: null,
+  },
+  ,
+  {
     slug: "boc-safepass",
     endpoint: "/projects/boc-safepass",
     className: "BOCSafePass",
+    projectComment: "CLIENT PROJECT",
     status: "Client Proposal",
     title: "BOC SafePass",
     projectType: "Client system proposal",
@@ -296,155 +447,10 @@ export const projects = [
     notes: null,
   },
   {
-    slug: "daelo",
-    endpoint: "/projects/daelo",
-    className: "Daelo",
-    status: "3rd Place Winner",
-    title: "Daelo",
-    projectType: "Hackathon project",
-    builtFor: "University of Cebu hackathon project",
-    summary:
-      "AI-powered career simulation platform focused on interview readiness, resume generation, and evaluation for students preparing for job applications.",
-    overview:
-      "An AI-powered career simulation platform that helps students prepare for job applications through interview simulation, resume generation, and evaluation.",
-    story:
-      "Built as a hackathon project focused on helping students become more prepared and confident before applying for real jobs.",
-    contributions: [
-      "Built backend features for interview simulation and feedback",
-      "Integrated AI workflows using Google ADK and Gemini",
-      "Designed authentication and user management using Firebase",
-      "Implemented Firestore-based backend data handling",
-      "Developed structured AI pipelines for recommendations, resume outputs, and evaluation",
-      "Applied schema-based validation for reliable AI outputs",
-      "Contributed to frontend integration using React",
-    ],
-    highlights: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
-    stack: ["TypeScript", "Express", "Firebase", "Gemini", "Google ADK"],
-    gallery: [
-      {
-        fileLabel: "// interview-simulation",
-        windowTitle: "InterviewPracticeSession",
-        annotation: '@PreviewState("simulation")',
-        headline: "Interview practice session",
-        description:
-          "Runs question prompts, answer capture, and AI-backed coaching in one guided flow.",
-        rows: [
-          "Gemini interview prompt orchestration",
-          "candidate answer evaluation",
-          "feedback and retry handling",
-        ],
-        metrics: ["rounds:6", "feedback:ai", "schema:validated"],
-      },
-      {
-        fileLabel: "// resume-generation",
-        windowTitle: "ResumeOutputPipeline",
-        annotation: '@PreviewState("resume")',
-        headline: "Resume generation pipeline",
-        description:
-          "Transforms profile data and AI recommendations into structured resume output.",
-        rows: [
-          "resume content assembly",
-          "Firestore document persistence",
-          "schema-checked output formatting",
-        ],
-        metrics: ["resume:v1", "storage:firestore", "output:structured"],
-      },
-      {
-        fileLabel: "// evaluation-dashboard",
-        windowTitle: "CareerReadinessScoreboard",
-        annotation: '@PreviewState("evaluation")',
-        headline: "Career readiness scoring",
-        description:
-          "Summarizes interview performance, recommendations, and areas to improve.",
-        rows: [
-          "recommendation scoring",
-          "skill-gap feedback generation",
-          "frontend-ready evaluation payloads",
-        ],
-        metrics: ["score:84", "suggestions:5", "user-state:tracked"],
-      },
-    ],
-    sourceUrl: null,
-    liveUrl: null,
-    notes: null,
-  },
-  {
-    slug: "vista",
-    endpoint: "/projects/vista",
-    className: "Vista",
-    status: "Finalist",
-    title: "Vista",
-    projectType: "PropTech hackathon project",
-    builtFor: "Filipino Homes PropTech Hackathon",
-    summary:
-      "Flask backend for an AI-assisted real estate platform that combines listing management, virtual staging sessions, Firestore persistence, and Amazon S3 media workflows.",
-    overview:
-      "An AI-powered property visualization platform that helps users visualize and customize properties before buying or selling.",
-    story:
-      "Built during a PropTech hackathon to explore how AI can improve property presentation and buyer decision-making through virtual staging.",
-    contributions: [
-      "Contributed to the backend of the platform",
-      "Built property listing backend workflows",
-      "Implemented AI-powered virtual staging flows using Gemini",
-      "Integrated Firestore for property and session data",
-      "Integrated AWS S3 for media handling",
-      "Developed backend flows connecting property data, image processing, and AI generation",
-      "Contributed to frontend integration using React",
-    ],
-    highlights: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
-    stack: ["Python", "Flask", "Firebase", "Gemini", "AWS S3"],
-    gallery: [
-      {
-        fileLabel: "// property-listing-intake",
-        windowTitle: "PropertyListingWorkflow",
-        annotation: '@PreviewState("listing")',
-        headline: "Property listing intake",
-        description:
-          "Handles listing creation, metadata storage, and media preparation for properties.",
-        rows: [
-          "listing field validation",
-          "Firestore property persistence",
-          "S3 media upload handling",
-        ],
-        metrics: ["listings:ready", "storage:s3", "forms:validated"],
-      },
-      {
-        fileLabel: "// virtual-staging-session",
-        windowTitle: "VirtualStagingSession",
-        annotation: '@PreviewState("staging")',
-        headline: "AI staging workflow",
-        description:
-          "Connects source property images with Gemini-based staging and session state tracking.",
-        rows: [
-          "Gemini staging request orchestration",
-          "session chat / state updates",
-          "generated image persistence",
-        ],
-        metrics: ["ai:gemini", "sessions:tracked", "images:processed"],
-      },
-      {
-        fileLabel: "// buyer-visualization-preview",
-        windowTitle: "BuyerExperiencePreview",
-        annotation: '@PreviewState("experience")',
-        headline: "Property visualization output",
-        description:
-          "Presents staged property output to help buyers evaluate visual possibilities before decisions.",
-        rows: [
-          "before / after stage results",
-          "frontend integration payloads",
-          "media retrieval via cloud storage",
-        ],
-        metrics: ["preview:ready", "hackathon:finalist", "ui:connected"],
-      },
-    ],
-    sourceUrl: "https://github.com/roginandd/vista-api",
-    liveUrl: "https://vista-cspsits.vercel.app",
-    notes: null,
-  },
-  {
     slug: "fair-group-assignment-system",
     endpoint: "/projects/fair-group-assignment-system",
     className: "FairGroupAssignmentSystem",
+    projectComment: "SCHOOL PROJECT",
     status: "Completed",
     title: "Fair Group Assignment System",
     projectType: "Academic final project",

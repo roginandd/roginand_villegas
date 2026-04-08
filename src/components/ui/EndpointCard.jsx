@@ -14,7 +14,8 @@ export default function EndpointCard({ project, onOpen }) {
     <article className="space-y-3">
       <div className="space-y-1">
         <CodeLine className="text-xs text-accent">
-          @GetMapping(<span className="text-primary">"{project.endpoint}"</span>)
+          @GetMapping(<span className="text-primary">"{project.endpoint}"</span>
+          )
         </CodeLine>
         <CodeLine className="text-xs text-muted">
           @Status(<span className="text-primary">"{project.status}"</span>)
@@ -31,6 +32,10 @@ export default function EndpointCard({ project, onOpen }) {
         <h3 className="font-display text-2xl font-bold uppercase tracking-technical text-ink md:text-[1.9rem]">
           {project.title}
         </h3>
+
+        <CodeLine className="mt-3 text-xs uppercase tracking-[0.18em] text-muted">
+          // {project.projectComment}
+        </CodeLine>
 
         <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
           {project.summary}
@@ -53,26 +58,28 @@ export default function EndpointCard({ project, onOpen }) {
         ) : null}
 
         <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-outline pt-5">
-          <CodeButton onClick={() => onOpen(project)}>openProjectDetail()</CodeButton>
+          <CodeButton onClick={() => onOpen(project)}>
+            openProjectDetail()
+          </CodeButton>
 
           {project.sourceUrl || project.liveUrl ? (
             <>
-            {project.sourceUrl ? (
-              <CodeLink
-                href={project.sourceUrl}
-                onClick={(event) => event.stopPropagation()}
-              >
-                viewSource()
-              </CodeLink>
-            ) : null}
-            {project.liveUrl ? (
-              <CodeLink
-                href={project.liveUrl}
-                onClick={(event) => event.stopPropagation()}
-              >
-                openLive()
-              </CodeLink>
-            ) : null}
+              {project.sourceUrl ? (
+                <CodeLink
+                  href={project.sourceUrl}
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  viewSource()
+                </CodeLink>
+              ) : null}
+              {project.liveUrl ? (
+                <CodeLink
+                  href={project.liveUrl}
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  openLive()
+                </CodeLink>
+              ) : null}
             </>
           ) : null}
         </div>
