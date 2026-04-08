@@ -28,7 +28,7 @@ export default function HeroSection() {
 
         <div
           aria-hidden="true"
-          className="grid gap-x-6 gap-y-4 md:grid-cols-[minmax(0,1fr)_260px] md:grid-rows-[auto_auto] md:items-start"
+          className="grid gap-x-6 gap-y-4 md:grid-cols-[minmax(0,1fr)_260px] md:grid-rows-[minmax(0,1fr)_260px] md:items-start"
         >
           <p className="font-sans text-5xl font-extrabold uppercase leading-none tracking-technical text-ink sm:text-6xl md:col-start-1 md:row-start-1 md:text-7xl">
             {firstName}
@@ -38,7 +38,7 @@ export default function HeroSection() {
           </p>
           </p>
           
-       <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-20">
            <p className="font-mono text-sm text-muted">
             // {profile.role} · {profile.school} · {profile.location}
           </p>
@@ -63,12 +63,9 @@ export default function HeroSection() {
               />
             </div>
             <div className="space-y-1 border border-outline px-4 py-4">
-              <CodeLine className="text-xs text-muted">
-                private final String currentFocus ={" "}
-                <span className="text-primary">"backend-systems-and-real-workflows"</span>;
-              </CodeLine>
-              <CodeLine className="text-xs text-muted">
-                private final String base = <span className="text-primary">"Cebu, Philippines"</span>;
+           
+              <CodeLine className="text-xs text-muted overflow-x-hidden">
+                private final String homeTown = <span className="text-primary">"Cebu, Philippines"</span>;
               </CodeLine>
             </div>
           </figure>

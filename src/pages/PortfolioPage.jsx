@@ -11,7 +11,7 @@ export default function PortfolioPage() {
     <div className="min-h-screen bg-surface text-ink">
       <Navbar />
 
-      <main className="mx-auto flex max-w-artifact flex-col gap-28 px-5 pb-28 pt-28 md:px-6 md:pt-32">
+      <main className="mx-auto flex max-w-artifact flex-col gap-7 px-5 pb-28 pt-28 md:px-6 md:pt-32">
         <HeroSection />
         <AboutSection />
         <TechStackSection />
