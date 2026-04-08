@@ -58,8 +58,8 @@ export const profile = {
 export const about = {
   lines: [
     "Builds backend systems centered on REST APIs, real-world workflows, and clean service boundaries.",
-    "Focuses on performance, SOLID-based architecture, and maintainable code for scalable systems.",
-    "3rd-year Computer Science student at the University of Cebu, delivering production-ready backend systems with clear data models and reliable APIs.",
+    "Specializes in performance, SOLID-based architecture, and maintainable code using iterative, Agile-driven development.",
+    "Delivers production-ready systems through incremental features, continuous refinement, and real-world usage feedback as a 3rd-year Computer Science student at the University of Cebu.",
   ],
   tags: [
     { name: "@education", value: "BS Computer Science, University of Cebu" },
