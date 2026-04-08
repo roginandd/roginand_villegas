@@ -4,7 +4,7 @@ function isExternalLink(href) {
   return href.startsWith("http") || href.startsWith("mailto:");
 }
 
-export default function CodeLink({ href, className, children }) {
+export default function CodeLink({ href, className, children, ...props }) {
   const external = isExternalLink(href);
 
   return (
@@ -16,6 +16,7 @@ export default function CodeLink({ href, className, children }) {
       )}
       target={external && !href.startsWith("mailto:") ? "_blank" : undefined}
       rel={external && !href.startsWith("mailto:") ? "noreferrer" : undefined}
+      {...props}
     >
       <span>{children}</span>
       <span aria-hidden="true">-&gt;</span>
