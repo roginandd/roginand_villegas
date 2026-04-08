@@ -1,3 +1,11 @@
+import adminSalesImage from "../assets/projects/csps-web/admin_sales.png";
+import computerScienceStudentsImage from "../assets/projects/csps-web/computer_science_students.png";
+import financeOverviewImage from "../assets/projects/csps-web/finance_overview.png";
+import homePageImage from "../assets/projects/csps-web/home_page.png";
+import landingPageImage from "../assets/projects/csps-web/landing_page.png";
+import merchPageImage from "../assets/projects/csps-web/merch_page.png";
+import transactionPageImage from "../assets/projects/csps-web/transaction_page.png";
+
 export const navigationItems = [
   { id: "source", label: "source" },
   { id: "javadoc", label: "javadoc" },
@@ -14,7 +22,7 @@ export const profile = {
   role: "Backend Engineer (3rd Year CS Student)",
   school: "University of Cebu",
   location: "Cebu, Philippines",
-  statusMessage: "open-to-internship-and-entry-level-roles",
+  statusMessage: "AVAILABLE_FOR_BACKEND_INTERNSHIPS_AND_ENTRY-LEVEL_ROLES",
   githubHandle: "roginandd",
 };
 
@@ -27,7 +35,10 @@ export const about = {
   tags: [
     { name: "@education", value: "BS Computer Science, University of Cebu" },
     { name: "@location", value: "Cebu, Philippines" },
-    { name: "@target", value: "internship-and-entry-level-backend-roles" },
+    {
+      name: "@target",
+      value: "Available for Backend Internships and Entry-Level Roles",
+    },
   ],
 };
 
@@ -55,79 +66,143 @@ export const techStack = [
   {
     label: "securityAndTools",
     declaration: "String[] securityAndTools",
-    items: ["JWT", "Spring Security", "Spring JPA", "Firebase Auth", "Git", "Maven"],
+    items: [
+      "JWT",
+      "Spring Security",
+      "Spring JPA",
+      "Firebase Auth",
+      "Git",
+      "Maven",
+    ],
   },
 ];
 
 export const projects = [
   {
     slug: "csps-platform-backend",
-    
     endpoint: "/projects/csps-platform-backend",
-    className: "CSPSPlatformBackend",
+    className: "CSPSWebApplication",
     status: "Production",
     title: "CSPS Web Application",
-    projectType: "Student organization platform",
+    projectType: "Student organization operations platform",
     builtFor: "Computer Science students at the University of Cebu",
+
     summary:
-      "Web application built for Computer Science Students at the   University of Cebu student platform covering authentication, memberships, announcements, attendance, events, merch, orders, finance, and audit workflows.",
+      "Engineered the backend for a production-grade student organization platform used by Computer Science students at the University of Cebu, unifying memberships, merchandise, ticketing, events, attendance, finance tracking, and administrative operations into a single system.",
+
     overview:
-      "A centralized student organization platform for managing memberships, merchandise, events, attendance, and administrative workflows.",
+      "A centralized web platform that digitizes student organization operations by integrating identity management, membership lifecycle, commerce, event participation, attendance tracking, and financial reporting into one cohesive system.",
+
     story:
-      "Built to replace fragmented and manual student organization processes with one structured platform that supports real student operations.",
+      "Developed to replace fragmented and manual processes used by the organization, this system enables structured, trackable, and scalable workflows across student management, transactions, and event operations in a real-world campus environment.",
+
     contributions: [
-      "Architected and built the backend platform",
-      "Designed the data model and overall backend structure",
-      "Implemented authentication and role-based access",
-      "Built commerce workflows including cart, checkout, and purchase history",
-      "Designed validation rules for transaction consistency and inventory integrity",
-      "Developed membership tracking and QR-based attendance workflows",
-      "Integrated cloud storage and email workflows",
+      "Architected and built the full backend system for a multi-module student organization platform used in real operations",
+      "Designed the relational data model covering students, memberships, merchandise, carts, orders, events, attendance, and administrative reporting",
+      "Implemented JWT-based authentication and role-based access control for students and multiple admin roles",
+      "Developed end-to-end commerce workflows including product catalog, filtering, cart management, checkout, order lifecycle, and inventory control",
+      "Engineered business rules to enforce transaction consistency, stock integrity, and duplicate purchase prevention across memberships and ticketing",
+      "Built membership lifecycle management with academic year tracking, bulk processing, and member status analytics",
+      "Implemented QR-based attendance system for event sessions, participant validation, and real-time check-in tracking",
+      "Developed admin dashboards for finance, sales performance, transaction monitoring, and operational reporting",
+      "Integrated AWS S3 for media storage and SMTP-based email workflows for verification, recovery, and order notifications",
+      "Structured the backend using layered architecture (controller, service, repository) for maintainability and scalability",
     ],
-    highlights: ["Java", "Spring Boot", "MySQL", "AWS S3", "JWT"],
-    stack: ["Java", "Spring Boot", "MySQL", "AWS S3", "JWT"],
+
+    highlights: [
+      "Production-deployed system",
+      "Used in real student organization operations",
+      "End-to-end backend ownership",
+      "Multi-domain system (commerce, events, attendance, finance)",
+      "Role-based admin dashboards and workflows",
+    ],
+
+    stack: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "MySQL",
+      "JPA/Hibernate",
+      "AWS S3",
+      "JWT",
+      "SMTP",
+    ],
+
+    resumeAngle:
+      "Demonstrates full backend engineering ownership including system design, relational modeling, authentication, business logic, workflow orchestration, and integration of real operational features in a production environment.",
+
+    impact:
+      "Replaced manual and fragmented processes with a centralized system that enables structured membership management, commerce, event participation, attendance tracking, and financial monitoring for the Computer Science student organization.",
     gallery: [
       {
-        fileLabel: "// membership-dashboard",
-        windowTitle: "MembershipAdminView",
-        annotation: '@PreviewState("memberships")',
-        headline: "Semester membership dashboard",
+        fileLabel: "// landing_page.png",
+        windowTitle: "LandingPageView",
+        annotation: '@PreviewState("entry")',
+        headline: "Public landing page",
         description:
-          "Tracks active members, renewals, and officer-facing filters inside one operations surface.",
-        rows: [
-          "membershipService.getCurrentSemesterRecords()",
-          "renewal eligibility validation",
-          "officer-only admin actions",
-        ],
-        metrics: ["members:324", "renewals:58", "rbac:enabled"],
+          "The first-screen experience introduces the organization platform and routes users into authentication and student-facing flows.",
+        imageSrc: landingPageImage,
+        imageAlt: "CSPS web application landing page",
       },
       {
-        fileLabel: "// merch-checkout-flow",
-        windowTitle: "MerchOrderPipeline",
+        fileLabel: "// home_page.png",
+        windowTitle: "HomePageView",
+        annotation: '@PreviewState("overview")',
+        headline: "Member home page",
+        description:
+          "The main application dashboard consolidates organization activity, navigation, and the common entry points students use after signing in.",
+        imageSrc: homePageImage,
+        imageAlt: "CSPS web application home page",
+      },
+      {
+        fileLabel: "// computer_science_students.png",
+        windowTitle: "StudentDirectoryView",
+        annotation: '@PreviewState("members")',
+        headline: "Computer science students view",
+        description:
+          "This page highlights the member-facing record view used to browse and manage student information inside the system.",
+        imageSrc: computerScienceStudentsImage,
+        imageAlt: "CSPS web application student records page",
+      },
+      {
+        fileLabel: "// merch_page.png",
+        windowTitle: "MerchPageView",
         annotation: '@PreviewState("commerce")',
-        headline: "Cart to checkout workflow",
+        headline: "Merchandise page",
         description:
-          "Shows the backend flow behind product ordering, stock checks, and purchase history.",
-        rows: [
-          "cart item aggregation",
-          "inventory integrity guard",
-          "purchase history persistence",
-        ],
-        metrics: ["orders:128", "stock-lock:on", "history:available"],
+          "The merchandise workflow surfaces product browsing and purchasing inside the same platform used for memberships and events.",
+        imageSrc: merchPageImage,
+        imageAlt: "CSPS web application merchandise page",
       },
       {
-        fileLabel: "// qr-attendance-panel",
-        windowTitle: "AttendanceScanConsole",
-        annotation: '@PreviewState("attendance")',
-        headline: "QR attendance event scan",
+        fileLabel: "// transaction_page.png",
+        windowTitle: "TransactionPageView",
+        annotation: '@PreviewState("transactions")',
+        headline: "Transaction page",
         description:
-          "Connects membership state, event attendance, and scan recording for student operations.",
-        rows: [
-          "qrScanService.record()",
-          "event participation linkage",
-          "member validation before attendance save",
-        ],
-        metrics: ["scans:412", "events:14", "audit:stored"],
+          "Transaction history and order tracking give members and admins visibility into completed platform activity.",
+        imageSrc: transactionPageImage,
+        imageAlt: "CSPS web application transaction page",
+      },
+      {
+        fileLabel: "// admin_sales.png",
+        windowTitle: "AdminSalesView",
+        annotation: '@PreviewState("admin-sales")',
+        headline: "Admin sales dashboard",
+        description:
+          "Sales monitoring helps officers track merchandise movement, purchasing behavior, and operational performance from the admin side.",
+        imageSrc: adminSalesImage,
+        imageAlt: "CSPS web application admin sales dashboard",
+      },
+      {
+        fileLabel: "// finance_overview.png",
+        windowTitle: "FinanceOverviewView",
+        annotation: '@PreviewState("finance")',
+        headline: "Finance overview",
+        description:
+          "The finance screen centralizes reporting and visibility for organization-level transaction summaries and administrative review.",
+        imageSrc: financeOverviewImage,
+        imageAlt: "CSPS web application finance overview page",
       },
     ],
     sourceUrl: "https://github.com/roginandd/CSPS-redesign-backend",
@@ -138,26 +213,40 @@ export const projects = [
     slug: "boc-safepass",
     endpoint: "/projects/boc-safepass",
     className: "BOCSafePass",
-    status: "Proposal",
+    status: "Client Proposal",
     title: "BOC SafePass",
-    projectType: "Client project proposal",
-    builtFor: "Client project proposal for a Customs Administration system",
+    projectType: "Client system proposal",
+    builtFor:
+      "Developed for a Customs Administration (BSCA) masteral project focused on modernizing facility access and verification workflows",
     summary:
-      "QR-based access control proposal for stakeholder accreditation, visitor verification, entry tracking, and approval workflows in a Customs Administration setting.",
+      "QR-based access control system designed for stakeholder accreditation, visitor verification, and facility entry tracking within a Customs Administration environment.",
     overview:
-      "A QR-based access control and verification system for stakeholder accreditation, visitor management, and facility entry tracking.",
+      "A backend-driven access control and verification system that replaces manual accreditation, visitor logging, and entry monitoring with a structured and secure digital workflow.",
     story:
-      "Designed as a client-facing proposal to replace manual verification and entry logging with a more secure and trackable digital workflow.",
+      "Designed as a client-facing system proposal to support a masteral study in Customs Administration, with the goal of improving security, traceability, and operational efficiency in facility access management.",
     contributions: [
-      "Built the backend system for stakeholder accreditation and QR-based facility access",
-      "Designed the data model for stakeholders, documents, approvals, and logs",
-      "Implemented secure document handling and cloud storage",
-      "Developed approval workflows and role-based access flows",
-      "Built entry logging and reporting features",
-      "Structured the system using layered architecture",
+      "Designed and built the backend system for stakeholder accreditation and QR-based facility access",
+      "Modeled the core data structure for stakeholders, verification documents, approval workflows, and entry logs",
+      "Implemented secure document handling and cloud storage integration for verification processes",
+      "Developed approval workflows and role-based access control for administrative and verifier roles",
+      "Built entry logging and reporting features to track and monitor facility activity",
+      "Structured the backend using a layered architecture for maintainability and scalability",
     ],
-    highlights: ["Spring Boot", "PostgreSQL", "JWT", "AWS S3", "Layered architecture"],
-    stack: ["Spring Boot", "PostgreSQL", "JWT", "AWS S3"],
+    highlights: [
+      "Spring Boot",
+      "PostgreSQL",
+      "JWT Authentication",
+      "AWS S3 Integration",
+      "Layered Architecture",
+    ],
+    stack: [
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "JWT",
+      "AWS S3",
+      "Spring Security",
+    ],
     gallery: [
       {
         fileLabel: "// stakeholder-accreditation",
@@ -448,7 +537,8 @@ export const contact = {
       href: null,
     },
   ],
-  returnLine: 'return new ConnectionSuccessful("backend-collaboration-started");',
+  returnLine:
+    'return new ConnectionSuccessful("backend-collaboration-started");',
 };
 
 export const footer = {
