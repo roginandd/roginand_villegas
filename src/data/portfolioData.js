@@ -66,11 +66,11 @@ export const projects = [
     endpoint: "/projects/csps-platform-backend",
     className: "CSPSPlatformBackend",
     status: "Production",
-    title: "CSPS Platform Backend",
+    title: "CSPS Web Application",
     projectType: "Student organization platform",
     builtFor: "Computer Science students at the University of Cebu",
     summary:
-      "Spring Boot backend for a University of Cebu student platform covering authentication, memberships, announcements, attendance, events, merch, orders, finance, and audit workflows.",
+      "Web application built for Computer Science Students at the   University of Cebu student platform covering authentication, memberships, announcements, attendance, events, merch, orders, finance, and audit workflows.",
     overview:
       "A centralized student organization platform for managing memberships, merchandise, events, attendance, and administrative workflows.",
     story:
