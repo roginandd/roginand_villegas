@@ -1,11 +1,16 @@
 import developerPreview from "../../assets/me/me.jpg";
+import resumePdf from "../../assets/resume/Villegas, Roginand - Resume.pdf";
 import { profile } from "../../data/portfolioData";
+import CodeButton from "../ui/CodeButton";
 import CodeLine from "../ui/CodeLine";
 import CodeLink from "../ui/CodeLink";
 import SectionShell from "../ui/SectionShell";
 
 export default function HeroSection() {
   const [firstName, lastName] = profile.name.split(" ");
+  const getResume = () => {
+  window.open(resumePdf, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <SectionShell as="header" id="source" className="space-y-10">
@@ -46,9 +51,10 @@ export default function HeroSection() {
             "{profile.statusMessage}"
           </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3">
-        <CodeLink href="#endpoints">getProjects()</CodeLink>
-        <CodeLink href="#contact">contact()</CodeLink>
-      </div>
+              <CodeButton onClick={getResume}>getResume()</CodeButton>
+              <CodeLink href="#endpoints">getProjects()</CodeLink>
+              <CodeLink href="#contact">contact()</CodeLink>
+            </div>
         </div>
         
           

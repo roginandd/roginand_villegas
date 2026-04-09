@@ -57,10 +57,10 @@ export const profile = {
 
 export const about = {
   lines: [
-    "Builds backend systems centered on REST APIs, real-world workflows, and clean service boundaries.",
-    "Specializes in performance, SOLID-based architecture, and maintainable code using iterative, Agile-driven development.",
-    "Delivers production-ready systems through incremental features, continuous refinement, and real-world usage feedback as a 3rd-year Computer Science student at the University of Cebu.",
-  ],
+  "Turns complex problems into practical solutions by designing systems that translate requirements into reliable, production-ready workflows.",
+  "Builds high-performance REST API systems with efficient data flow, strong validation, and consistent business rule enforcement.",
+  "Develops modular and maintainable applications using Java, TypeScript, and Python, integrating cloud services and integrate AI-driven features.",
+],
   tags: [
     { name: "@education", value: "BS Computer Science, University of Cebu" },
     { name: "@location", value: "Cebu, Philippines" },
@@ -129,7 +129,7 @@ export const projects = [
       "Developed to replace fragmented and manual processes used by the organization, this system enables structured, trackable, and scalable workflows across student management, transactions, and event operations in a real-world campus environment.",
 
     contributions: [
-      "Architected and built the full backend system for a multi-module student organization platform used in real operations",
+      "Architected and delivered the backend system for a multi-module student organization platform used in real operations",
       "Designed the relational data model covering students, memberships, merchandise, carts, orders, events, attendance, and administrative reporting",
       "Implemented JWT-based authentication and role-based access control for students and multiple admin roles",
       "Developed end-to-end commerce workflows including product catalog, filtering, cart management, checkout, order lifecycle, and inventory control",
@@ -138,7 +138,8 @@ export const projects = [
       "Implemented QR-based attendance system for event sessions, participant validation, and real-time check-in tracking",
       "Developed admin dashboards for finance, sales performance, transaction monitoring, and operational reporting",
       "Integrated AWS S3 for media storage and SMTP-based email workflows for verification, recovery, and order notifications",
-      "Structured the backend using layered architecture (controller, service, repository) for maintainability and scalability",
+      "Integrated Meta Graph API to enable real-time synchronization of announcements and posts from the organization’s official page into the platform",
+      "Structured the backend using layered architecture (controller, service, repository) to ensure maintainability and scalability",
     ],
 
     highlights: [
